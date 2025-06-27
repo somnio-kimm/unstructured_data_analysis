@@ -1,15 +1,17 @@
 # config.py
-# Store constants
+# Constants
 
 # Library
 import torch
 
 # Constants
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-MODEL_WEIGHT_PATH = "model/emotion_classifier5.pth"
+DETECTOR_PATH = "model/yolo.onnx"
+CLASSIFIER_WEIGHT_PATH = "model/resnet_emotion_classifier.pth"
 EMOTION = ["anger", "happy", "panic", "sadness"]
-EMOTION_MAP = {"anger": "sad",
+EMOTION_MAP = {"anger": "angry",
 			   "happy": "happy",
-			   "panic": "sad",
-			   "sadness": "sad"}
+			   "panic": "awe",
+			   "sadness": "sad",
+			   "blank": "blank"}
 IMAGE_SIZE = 224
